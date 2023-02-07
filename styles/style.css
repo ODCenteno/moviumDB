@@ -1,0 +1,34 @@
+:root {
+  /* Material Pallete Colors */
+  --primary-blue: #0097A7;
+  --dark-primary: #0097A7;
+  --light-primary: #B2EBF2;
+  --white-main-text: #FFFFFF;
+  --accent-purple: #7C4DFF;
+  --primary-text: #212121;
+  --secondary-text-grey: #757575;
+  --divider-grey: #BDBDBD;
+
+  /* Font Sizes */
+  --title: 2rem;
+  --subtitle: 1.8rem;
+  --p:1.6rem;
+  --small:1.4rem;
+  --xs: 1.2rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'DM Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* BEM */
+/* one-block__one-element_modifier  */
+/* optional-block__element--modifier-style */
