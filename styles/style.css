@@ -1,13 +1,6 @@
 :root {
   /* Material Pallete Colors */
-  --primary-blue: #0097A7;
-  --dark-primary: #0097A7;
-  --light-primary: #B2EBF2;
-  --white-main-text: #FFFFFF;
-  --accent-purple: #7C4DFF;
-  --primary-text: #212121;
-  --secondary-text-grey: #757575;
-  --divider-grey: #BDBDBD;
+  --primary: #0097A7;
 
   /* Font Sizes */
   --title: 2rem;
@@ -28,7 +21,52 @@ html {
   font-family: 'DM Sans', sans-serif;
   scroll-behavior: smooth;
 }
+.align-center {
+  text-align: center;
+}
+
+.inactive {
+  display: none;
+}
 
 /* BEM */
 /* one-block__one-element_modifier  */
 /* optional-block__element--modifier-style */
+
+/* Trending */
+#trendingPreview-card-container {
+  display: flex;
+  gap: 12px;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain; /* comportamiento de scroll */
+  scroll-snap-type: x proximity; /* centrar elemento de scroll eje x */
+  overflow-y: hidden;
+  white-space: nowrap;
+  /* height: 241px; */
+  padding-left: 24px;
+  padding-bottom: 16px;
+}
+
+.movie-container {
+  position: relative;
+  scroll-snap-align: center; /* Animación que lleva la tarjeta al centro */
+  padding: 4px 4px;
+  margin: 8px auto 8px;
+  background-color: var(--secondary);
+  box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+  border-radius: 8px;
+  height: 225px;
+  min-height: 225px;
+  max-height: 225px;
+  width: 150px;
+  min-width: 150px;
+  max-width: 150px;
+}
+.movie-container img {
+  border-radius: 4px;
+}
+
+#genres-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

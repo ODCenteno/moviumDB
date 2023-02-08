@@ -1,0 +1,28 @@
+{
+  "name": "moviumdb",
+  "version": "1.0.0",
+  "description": "Website to discover new films to enjoy",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ODCenteno/moviumDB.git"
+  },
+  "keywords": [
+    "movies",
+    "pico.css",
+    "javascript",
+    "vanilla"
+  ],
+  "author": "Omar Centeno",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ODCenteno/moviumDB/issues"
+  },
+  "homepage": "https://github.com/ODCenteno/moviumDB#readme",
+  "devDependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
