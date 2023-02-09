@@ -13,25 +13,23 @@
 
 <body>
   <main class="container">
-    <nav>
-      <ul>
+    <nav class="main-nav">
+      <ul class="home-ul">
         <li><span class="material-icons inactive">menu</span></li>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Más</a></li>
-        <input type="search" id="search" name="search" placeholder="Buscar pelis">
+        <li><a href="#">MOV:UM</a></li>
+        <li><a href="#">Descubrir</a></li>
       </ul>
+      <input type="search" id="search" name="search" placeholder="Buscar pelis">
       <ul>
-        <li>
+        <li id="genre-drop">
           <label for="generes"></label>
           <select id="generes" required>
-            <option value="" selected>Busca por género</option>
+            <option value="" selected>Géneros</option>
             <option>…</option>
           </select>
         </li>
       </ul>
     </nav>
-
-    <strong><h1>Movium</h1></strong>
 
     <img src="" alt="Movie picture">
 
@@ -140,7 +138,10 @@
     <footer>Hecho por @ODCenteno</footer>
   
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="./src/secrets.js"></script>
   <script src="./src/app.js"></script>
+  <script src="./src/navigation.js"></script>
 </body>
 </html>
