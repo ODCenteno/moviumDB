@@ -1,6 +1,3 @@
-const trendingPreview = document.getElementById('trendingPreview-card-container');
-const genresContainer = document.getElementById('genres-container');
-
 const basePosterURL = 'https://image.tmdb.org/t/p/w300';
 
 // Preparando la instancia de Axios en JS

@@ -19,7 +19,7 @@
         <li><a href="#">MOV:UM</a></li>
         <li><a href="#">Descubrir</a></li>
       </ul>
-      <input type="search" id="search" name="search" placeholder="Buscar pelis">
+      <input type="search" id="search-nav" name="search" placeholder="Buscar pelis" class="inactive">
       <ul>
         <li id="genre-drop">
           <label for="generes"></label>
@@ -31,7 +31,9 @@
       </ul>
     </nav>
 
-    <img src="" alt="Movie picture">
+    <input type="search" id="search-hero" name="search" placeholder="Buscar pelis">
+
+    <img id="hero-img" src="" alt="Movie picture">
 
     <section id="trendingPreview" class="trendingPreview-container">
       <div class="trendingPreview-header">
@@ -141,6 +143,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="./src/secrets.js"></script>
+  <script src="./src/nodes.js"></script>
   <script src="./src/app.js"></script>
   <script src="./src/navigation.js"></script>
 </body>

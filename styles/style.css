@@ -38,14 +38,20 @@ html {
   align-items: center;
   margin-bottom: 24px;
 }
-#search {
+#search-nav {
   max-width: 500px;
   margin-top: 1.2rem;
 }
 .genre-drop {
   min-width: 220px;
 }
-
+.trendingPreview-header {
+  display: flex;
+  justify-content: space-between;
+}
+.trendingPreview-btn {
+  max-height: 40px;
+}
 /* Trending */
 #trendingPreview-card-container {
   display: flex;
