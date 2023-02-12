@@ -1,10 +1,12 @@
 // Main Nav
 const navBar = document.querySelector('.main-nav');
 const genreDrop = document.getElementById('genre-drop');
+const menuIcon = document.getElementById('menu-icon');
 
 // Hero
-const heroImage = document.getElementById('hero-img');
+const arrowBackIcon = document.getElementById('arrow-back-icon');
 const searchHero = document.getElementById('search-hero');
+const heroImage = document.getElementById('hero-img');
 
 // Trending
 const trendingPreviewSection = document.getElementById('trendingPreview');
@@ -31,4 +33,7 @@ const movieDetailTitle = document.querySelector('movieDetail-title');
 const movieDetailScore = document.querySelector('movieDetail-score');
 const movieDetailDescription = document.querySelector('movieDetail-description');
 const categoriesList = document.querySelector('categories-list');
+
+// relatedMovies
 const relatedMoviesContainer = document.querySelector('.relatedMovies-container');
+

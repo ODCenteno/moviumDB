@@ -15,7 +15,7 @@
   <main class="container">
     <nav class="main-nav">
       <ul class="home-ul">
-        <li><span class="material-icons inactive">menu</span></li>
+        <li><span id="menu-icon" class="material-icons inactive">menu</span></li>
         <li><a href="#">MOV:UM</a></li>
         <li><a href="#">Descubrir</a></li>
       </ul>
@@ -31,9 +31,11 @@
       </ul>
     </nav>
 
+    <span id="arrow-back-icon" class="material-icons">arrow_back</span>
+
     <input type="search" id="search-hero" name="search" placeholder="Buscar pelis">
 
-    <img id="hero-img" src="" alt="Movie picture">
+    <img id="hero-img" src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg" alt="Movie picture">
 
     <section id="trendingPreview" class="trendingPreview-container">
       <div class="trendingPreview-header">
@@ -110,32 +112,59 @@
         <h2 class="relatedMovies-title">Películas similares</h2>
 
         <div class="relatedMovies-scrollContainer">
-          <div class="movie-container">
+          <article class="movie-container">
             <img
               src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
               class="movie-img"
               alt="Nombre de la película"
             />
-          </div>
+          </article>
           
-          <div class="movie-container">
+          <article class="movie-container">
             <img
               src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
               class="movie-img"
               alt="Nombre de la película"
             />
-          </div>
+          </article>
           
-          <div class="movie-container">
+          <article class="movie-container">
             <img
               src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
               class="movie-img"
               alt="Nombre de la película"
             />
-          </div>
+          </article>
         </div>
       </article>
     </section>
+
+    <article class="relatedMovies-container">
+      <h2 class="relatedMovies-title">Películas similares</h2>
+
+      <div class="relatedMovies-scrollContainer" class="align-center">
+        <article class="movie-container">
+          <img
+            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+            class="movie-img"
+            alt="Nombre de la película"/>
+        </article>
+        
+        <article class="movie-container">
+          <img
+            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+            class="movie-img"
+            alt="Nombre de la película"/>
+        </article>
+        
+        <article class="movie-container">
+          <img
+            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+            class="movie-img"
+            alt="Nombre de la película"/>
+        </article>
+      </div>
+    </article>
 
     <footer>Hecho por @ODCenteno</footer>
   

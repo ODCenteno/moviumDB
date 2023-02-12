@@ -36,18 +36,28 @@ html {
 /* NAV BAR */
 .main-nav {
   align-items: center;
-  margin-bottom: 24px;
 }
 #search-nav {
   max-width: 500px;
-  margin-top: 1.2rem;
+  margin-top: 12px;
+}
+#search-hero {
+  margin: 20px 0 36px 0;
 }
 .genre-drop {
   min-width: 220px;
 }
+#arrow-back-icon {
+  font-size: 3.4rem;
+  margin: 0 0 20px 0;
+}
+.hero-img {
+  align-self: center;
+}
 .trendingPreview-header {
   display: flex;
   justify-content: space-between;
+  max-height: 44px;
 }
 .trendingPreview-btn {
   max-height: 40px;
@@ -65,7 +75,21 @@ html {
   padding-left: 24px;
   padding-bottom: 16px;
 }
-
+.relatedMovies-scrollContainer {
+  display: flex;
+  gap: 12px;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain; /* comportamiento de scroll */
+  scroll-snap-type: x proximity; /* centrar elemento de scroll eje x */
+  overflow-y: hidden;
+  white-space: nowrap;
+  /* height: 241px; */
+  padding-left: 24px;
+  padding-bottom: 16px;
+}
+.trendingPreview-movieList {
+  padding: 4px;
+}
 .movie-container {
   position: relative;
   scroll-snap-align: center; /* Animación que lleva la tarjeta al centro */

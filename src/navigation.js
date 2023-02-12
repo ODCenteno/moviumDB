@@ -19,12 +19,31 @@ function navigatior() {
 
 function homePage() {
   console.log('Home!');
+  navBar.classList.remove('inactive');
+  arrowBackIcon.classList.add('inactive');
+  menuIcon.classList.add('inactive');
+  searchHero.classList.remove('inactive');
+  heroImage.classList.remove('inactive');
+  trendingPreviewSection.classList.remove('inactive');
+  categoriesPreview.classList.remove('inactive');
+  genericList.classList.add('inactive');
+  
   getTrendingMoviesPreview();
   getMoviesGenres();
 }
 
 function categoryPage() {
   console.log('Category!');
+  navBar.classList.add('inactive');
+  menuIcon.classList.add('inactive');
+  arrowBackIcon.classList.remove('inactive');
+  searchHero.classList.add('inactive');
+  heroImage.classList.add('inactive');
+  trendingPreviewSection.classList.add('inactive');
+  categoriesPreview.classList.remove('inactive');
+  categoriesPreviewList.classList.remove('inactive');
+  relatedMoviesContainer.classList.add('inactive');
+  getMoviesGenres();
 }
 function movieDetailsPage() {
   console.log('Movie!');
