@@ -29,10 +29,12 @@ const genericList = document.getElementById('genericList');
 
 // Movie Details
 const movieDetail = document.getElementById('movieDetail');
+const movieImage = document.querySelectorAll('.movie-img');
 const movieDetailTitle = document.querySelector('movieDetail-title');
 const movieDetailScore = document.querySelector('movieDetail-score');
 const movieDetailDescription = document.querySelector('movieDetail-description');
 const categoriesList = document.querySelector('categories-list');
+const movieContainer = document.querySelectorAll('.movie-container');
 
 // relatedMovies
 const relatedMoviesContainer = document.querySelector('.relatedMovies-container');

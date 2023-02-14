@@ -50,6 +50,10 @@ html {
 #arrow-back-icon {
   font-size: 3.4rem;
   margin: 0 0 20px 0;
+  cursor: pointer;
+}
+#arrow-back-icon:hover {
+  font-weight: bold;
 }
 .hero-img {
   align-self: center;
@@ -113,6 +117,23 @@ html {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+
+/* Movie Details */
+.movie-detail-image_container {
+  width: 100%;
+  display: block;
+  margin: 12px 0 20px 0;
+  text-align: center;
+}
+.movie-detail-img_hero{
+  max-width: 460px;
+}
+.movie-categories_container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 
 @media only screen and (min-width: 768px) {
   #genres-container {
