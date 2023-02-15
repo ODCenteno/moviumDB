@@ -1,11 +1,12 @@
-document.addEventListener('DOMContentLoaded', navigator, false);
-document.addEventListener('hashchange', navigator, false);
+trendingPreviewButton.addEventListener('click', trendsPage);
+window.addEventListener('DOMContentLoaded', navigator, false);
+window.addEventListener('hashchange', navigator, false);
 arrowBackIcon.addEventListener('click', homePage);
 movieContainer.forEach(e => {
   e.addEventListener('click', movieDetailsPage)});
 
 function navigator() {
-  console.log(`location ${ { location } }`);
+  console.log(location);
 
   if (location.hash.startsWith('#trends')) {
     trendsPage();
@@ -82,12 +83,12 @@ function trendsPage() {
 
   navBar.classList.remove('inactive');
   menuIcon.classList.add('inactive');
-  arrowBackIcon.classList.add('inactive');
+  arrowBackIcon.classList.remove('inactive');
   searchHero.classList.add('inactive');
   heroImage.classList.remove('inactive');
   trendingPreviewSection.classList.remove('inactive');
   categoriesPreview.classList.add('inactive');
   categoriesPreviewList.classList.add('inactive');
-  relatedMoviesContainer.classList.remove('inactive');
+  relatedMoviesContainer.classList.add('inactive');
   genericList.classList.add('inactive');
 }

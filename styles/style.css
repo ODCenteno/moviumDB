@@ -56,7 +56,7 @@ html {
   font-weight: bold;
 }
 .hero-img {
-  align-self: center;
+  text-align: center;
 }
 .trendingPreview-header {
   display: flex;
@@ -120,7 +120,7 @@ html {
 
 
 /* Movie Details */
-.movie-detail-image_container {
+.movie-detail-image_container, .movie-hero-image_container {
   width: 100%;
   display: block;
   margin: 12px 0 20px 0;
