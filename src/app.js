@@ -11,14 +11,12 @@ const api = axios.create({
 	}
 })
 
-async function getTrendingMoviesPreview() {
-  const { data } = await api(`/trending/movie/week`);
-  const movies = data.results;
-
-  trendingPreview.innerHTML = '';
+// utils
+function createMovies(movies, container) {
+  container.innerHTML = '';
 
   movies.forEach(movie => {
-    trendingPreview.innerHTML += `
+    container.innerHTML += `
     <article class="movie-container">
       <img
         class="movie-img"
@@ -29,11 +27,20 @@ async function getTrendingMoviesPreview() {
   });
 }
 
+// API Calls
+
+async function getTrendingMoviesPreview() {
+  const { data } = await api(`/trending/movie/week`);
+  const movies = data.results;
+
+  createMovies(movies, trendingPreview);
+}
+
 async function getMoviesGenres() {
+  genresContainer.innerHTML = '';
   const { data } = await api('/genre/movie/list');
   console.log(data)
 
-  genresContainer.innerHTML = '';
 
   const genres = data.genres;
   genres.forEach(genre => {
@@ -55,4 +62,18 @@ async function getMoviesGenres() {
       location.hash = `#category=${genre.id}-${genre.name}`;
     });
   });
+}
+
+async function getMoviesByGenre(id) {
+  genresContainer.innerHTML = '';
+  const { data } = await api(`/discover/movie?with_genres=${id}`);
+  console.log(data)
+
+  const movies = data.results;
+
+  createMovies(movies, genericListContainer);
+}
+
+async function getTrendMovies() {
+  
 }

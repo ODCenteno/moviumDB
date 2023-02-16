@@ -113,7 +113,7 @@ html {
   border-radius: 4px;
 }
 
-#genres-container {
+#genres-container, #genericList-movies_container {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }

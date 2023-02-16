@@ -1,4 +1,5 @@
 // Main Nav
+const moviumLogo = document.getElementById('movium-logo');
 const navBar = document.querySelector('.main-nav');
 const genreDrop = document.getElementById('genre-drop');
 const menuIcon = document.getElementById('menu-icon');
@@ -26,6 +27,8 @@ const genresContainer = document.getElementById('genres-container');
 
 // Generic List
 const genericList = document.getElementById('genericList');
+const genericListContainer = document.getElementById('genericList-movies_container');
+const genericlistTitle = document.querySelector('.movies-category_title');
 
 // Movie Details
 const movieDetail = document.getElementById('movieDetail');
