@@ -1,19 +1,27 @@
+searchHero.addEventListener('search', () => { 
+  console.log(searchHero.value)
+  location.hash = '#search=' + searchHero.value;
+});
 moviumLogo.addEventListener('click', () => { 
   location.hash = '';
 });
 trendingPreviewButton.addEventListener('click', () => { 
-  location.hash = '#trends';
+  location.hash = '#search=';
 });
 arrowBackIcon.addEventListener('click', () => { 
   location.hash = '#home';
+});
+movieContainer.forEach(e => {
+  e.addEventListener('click', () => { 
+    location.hash = '#movie=';
+  });
 });
 
 
 window.addEventListener('DOMContentLoaded', navigator, false);
 window.addEventListener('hashchange', navigator, false);
 
-movieContainer.forEach(e => {
-  e.addEventListener('click', movieDetailsPage)});
+
 
 function navigator() {
   console.log(location);
@@ -29,8 +37,13 @@ function navigator() {
   } else {
     homePage();
   }
+
   document.documentElement.scrollTo = 0;
   document.body.scrollTo = 0;
+  window.scroll({
+    top: 0,
+    behavior: 'smooth'
+  });
 }
 
 function homePage() {
@@ -91,14 +104,18 @@ function searchPage() {
 
   navBar.classList.remove('inactive');
   menuIcon.classList.add('inactive');
-  arrowBackIcon.classList.add('inactive');
+  arrowBackIcon.classList.remove('inactive');
   searchHero.classList.remove('inactive');
   heroImage.classList.add('inactive');
-  trendingPreviewSection.classList.remove('inactive');
-  categoriesPreview.classList.remove('inactive');
-  categoriesPreviewList.classList.remove('inactive');
+  trendingPreviewSection.classList.add('inactive');
+  categoriesPreview.classList.add('inactive');
+  categoriesPreviewList.classList.add('inactive');
   relatedMoviesContainer.classList.add('inactive');
   genericList.classList.remove('inactive');
+
+  const [ _, query] = location.hash.split('=');
+
+  getMoviesBySearch(query);
 }
 
 function trendsPage() {

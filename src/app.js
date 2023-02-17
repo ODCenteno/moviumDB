@@ -74,6 +74,16 @@ async function getMoviesByGenre(id) {
   createMovies(movies, genericListContainer);
 }
 
+async function getMoviesBySearch(query) {
+  genresContainer.innerHTML = '';
+  const { data } = await api(`/search/movie?query=${query}`);
+  console.log(data)
+
+  const movies = data.results;
+
+  createMovies(movies, genericListContainer);
+}
+
 async function getTrendMovies() {
-  
+
 }
