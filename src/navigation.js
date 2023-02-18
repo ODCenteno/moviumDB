@@ -1,15 +1,16 @@
 searchHero.addEventListener('search', () => { 
   console.log(searchHero.value)
-  location.hash = '#search=' + searchHero.value;
+  location.hash = '#search=' + searchHero.value.trim();
 });
 moviumLogo.addEventListener('click', () => { 
   location.hash = '';
 });
 trendingPreviewButton.addEventListener('click', () => { 
-  location.hash = '#search=';
+  location.hash = '#trends';
 });
 arrowBackIcon.addEventListener('click', () => { 
-  location.hash = '#home';
+  history.back();
+  // location.hash = '#home';
 });
 movieContainer.forEach(e => {
   e.addEventListener('click', () => { 
@@ -125,11 +126,13 @@ function trendsPage() {
   menuIcon.classList.add('inactive');
   arrowBackIcon.classList.remove('inactive');
   searchHero.classList.add('inactive');
-  heroImage.classList.remove('inactive');
-  trendingPreviewSection.classList.remove('inactive');
+  heroImage.classList.add('inactive');
+  trendingPreviewSection.classList.add('inactive');
   categoriesPreview.classList.add('inactive');
   categoriesPreviewList.classList.add('inactive');
   relatedMoviesContainer.classList.add('inactive');
-  genericList.classList.add('inactive');
+  genericList.classList.remove('inactive');
   trendingPreviewButton.classList.add('inactive');
+
+  getTrendingMovies()
 }

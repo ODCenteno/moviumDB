@@ -30,6 +30,7 @@ function createMovies(movies, container) {
 // API Calls
 
 async function getTrendingMoviesPreview() {
+  genresContainer.innerHTML = '';
   const { data } = await api(`/trending/movie/week`);
   const movies = data.results;
 
@@ -84,6 +85,9 @@ async function getMoviesBySearch(query) {
   createMovies(movies, genericListContainer);
 }
 
-async function getTrendMovies() {
+async function getTrendingMovies() {
+  const { data } = await api(`/trending/movie/week`);
+  const movies = data.results;
 
+  createMovies(movies, genericListContainer);
 }
