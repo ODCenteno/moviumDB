@@ -25,6 +25,17 @@ function createMovies(movies, container) {
     </article>
     `
   });
+
+  movieContainer.forEach(movie => {
+    movie.addEventListener('click', (e) => {
+      console.log(e);
+      const movie = {
+        id: e.id,
+        name: e.textContent
+      };
+      location.hash = `#movie=${movie.id}-${movie.name}`;
+    });
+  });
 }
 
 // API Calls
@@ -77,6 +88,7 @@ async function getMoviesByGenre(id) {
 
 async function getMoviesBySearch(query) {
   genresContainer.innerHTML = '';
+  genericlistTitle.textContent = query;
   const { data } = await api(`/search/movie?query=${query}`);
   console.log(data)
 
@@ -89,5 +101,16 @@ async function getTrendingMovies() {
   const { data } = await api(`/trending/movie/week`);
   const movies = data.results;
 
+
   createMovies(movies, genericListContainer);
+  genericlistTitle.textContent = 'Tendencias';
 }
+
+async function getMovieById(id) {
+  const { data: movie } = await api(`/movie/${id}`);
+  console.log(movie)
+
+  const movieContainer = await document.querySelectorAll('.category-title');
+
+  movieImgHero.src = basePosterURL + movie.backdrop_path;
+};
