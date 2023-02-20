@@ -33,13 +33,14 @@ const genericlistTitle = document.querySelector('.movies-category_title');
 // Movie Details
 const movieDetail = document.getElementById('movieDetail');
 const movieImage = document.querySelectorAll('.movie-img');
-const movieDetailTitle = document.querySelector('movieDetail-title');
-const movieDetailScore = document.querySelector('movieDetail-score');
-const movieDetailDescription = document.querySelector('movieDetail-description');
-const categoriesList = document.querySelector('categories-list');
+const movieDetailTitle = document.querySelector('.movieDetail-title');
+const movieScore = document.querySelector('#movie-score');
+const movieDetailDescription = document.querySelector('.movieDetail-description');
+const categoriesList = document.querySelector('.movie-categories_container');
 const movieContainer = document.querySelectorAll('.movie-container');
 const movieImgHero = document.getElementById('movie-detail-img_hero');
 
 // relatedMovies
-const relatedMoviesContainer = document.querySelector('.relatedMovies-container');
+const relatedMoviesSectionContainer = document.querySelector('.relatedMovies-container');
+const relatedMoviesContainer = document.querySelector('.relatedMovies-scrollContainer');
 

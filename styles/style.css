@@ -114,9 +114,10 @@ html {
   cursor: pointer;
 }
 
-#genres-container, #genericList-movies_container {
+#genres-container, #genericList-movies_container, .movie-categories_container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  text-align: center;
 }
 
 
@@ -130,9 +131,15 @@ html {
 .movie-detail-img_hero{
   max-width: 460px;
 }
-.movie-categories_container {
+/* .movie-categories_container {
   display: flex;
   justify-content: space-evenly;
+} */
+
+
+
+footer {
+  text-align: center;
 }
 
 

@@ -12,36 +12,63 @@ const api = axios.create({
 })
 
 // utils
+const changeLocation = ((id, movieTitle) => {
+  location.hash = `#movie=${id}-${movieTitle.trim()}`;
+});
+
 function createMovies(movies, container) {
   container.innerHTML = '';
 
   movies.forEach(movie => {
     container.innerHTML += `
-    <article class="movie-container">
-      <img
-        class="movie-img"
-        src="${basePosterURL}${movie.poster_path}"
-        alt="${movie.title}"/>
-    </article>
+      <article class="movie-container">
+        <img
+          class="movie-img"
+          id="${movie.id}"
+          src="${basePosterURL}${movie.poster_path}"
+          alt="${movie.title}"/>
+      </article>
     `
   });
 
-  movieContainer.forEach(movie => {
-    movie.addEventListener('click', (e) => {
-      console.log(e);
-      const movie = {
-        id: e.id,
-        name: e.textContent
-      };
+  container.addEventListener("click", (e) => {
+    // console.log(e.target);
+    const movie = {
+      id: e.target.id,
+      name: e.target.alt,
+    };
+    if (e.target.nodeName === 'IMG') {
       location.hash = `#movie=${movie.id}-${movie.name}`;
-    });
+    }
+  });
+}
+
+function createCategories(genres, container) {
+  container.innerHTML = '';
+  genres.forEach(genre => {
+    container.innerHTML += `
+    <div class="category-container">
+      <a><h3 id="${genre.id}" class="category-title">${genre.name}</h3></a>
+    </div>
+    `
+  });
+
+  container.addEventListener('click', (event) => {
+    console.log(event.target);
+    const genre = {
+      id: event.target.id,
+      name: event.target.textContent
+    };
+    if (event.target.nodeName === 'H3') {
+      location.hash = `#category=${genre.id}-${genre.name}`;
+    }
   });
 }
 
 // API Calls
 
 async function getTrendingMoviesPreview() {
-  genresContainer.innerHTML = '';
+  
   const { data } = await api(`/trending/movie/week`);
   const movies = data.results;
 
@@ -53,28 +80,12 @@ async function getMoviesGenres() {
   const { data } = await api('/genre/movie/list');
   console.log(data)
 
-
   const genres = data.genres;
-  genres.forEach(genre => {
-    genresContainer.innerHTML += `
-    <div class="category-container">
-      <a><h3 id="${genre.id}" class="category-title">${genre.name}</h3></a>
-    </div>
-    `
-  });
 
-  const categoryTitle = await document.querySelectorAll('.category-title');
-  categoryTitle.forEach(categoryTitle => {
-    categoryTitle.addEventListener('click', (e) => {
-      console.log(e);
-      const genre = {
-        id: categoryTitle.id,
-        name: categoryTitle.textContent
-      };
-      location.hash = `#category=${genre.id}-${genre.name}`;
-    });
-  });
+  createCategories(genres, genresContainer);
 }
+
+// Get Data
 
 async function getMoviesByGenre(id) {
   genresContainer.innerHTML = '';
@@ -110,7 +121,22 @@ async function getMovieById(id) {
   const { data: movie } = await api(`/movie/${id}`);
   console.log(movie)
 
-  const movieContainer = await document.querySelectorAll('.category-title');
+  // const movieContainer = await document.querySelectorAll('.category-title');
 
-  movieImgHero.src = basePosterURL + movie.backdrop_path;
+  movieImgHero.src = basePosterURL + movie.poster_path;
+  movieDetailTitle.textContent = movie.title;
+  movieScore.textContent = Math.round(movie.vote_average);
+  movieDetailDescription.textContent = movie.overview;
+  
+  createCategories(movie.genres, categoriesList);
+  getSimilarMoviesById(id)
 };
+
+async function getSimilarMoviesById(id) {
+  const { data } = await api(`/movie/${id}/recommendations`);
+  console.log('got similar movies');
+
+  const similarMovies = data.results;
+
+  createMovies(similarMovies, relatedMoviesContainer)
+}
