@@ -38,7 +38,7 @@ const movieScore = document.querySelector('#movie-score');
 const movieDetailDescription = document.querySelector('.movieDetail-description');
 const categoriesList = document.querySelector('.movie-categories_container');
 const movieContainer = document.querySelectorAll('.movie-container');
-const movieImgHero = document.getElementById('movie-detail-img_hero');
+const movieImgHero = document.querySelector('.movie-detail-img_hero');
 
 // relatedMovies
 const relatedMoviesSectionContainer = document.querySelector('.relatedMovies-container');

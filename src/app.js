@@ -112,7 +112,6 @@ async function getTrendingMovies() {
   const { data } = await api(`/trending/movie/week`);
   const movies = data.results;
 
-
   createMovies(movies, genericListContainer);
   genericlistTitle.textContent = 'Tendencias';
 }
@@ -121,9 +120,10 @@ async function getMovieById(id) {
   const { data: movie } = await api(`/movie/${id}`);
   console.log(movie)
 
-  // const movieContainer = await document.querySelectorAll('.category-title');
+  imgSource = basePosterURL + movie.poster_path;
 
-  movieImgHero.src = basePosterURL + movie.poster_path;
+  movieImgHero.src = imgSource;
+  movieImgHero.alt = movie.title
   movieDetailTitle.textContent = movie.title;
   movieScore.textContent = Math.round(movie.vote_average);
   movieDetailDescription.textContent = movie.overview;

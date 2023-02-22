@@ -94,7 +94,7 @@ html {
 .trendingPreview-movieList {
   padding: 4px;
 }
-.movie-container {
+.movie-container, .movie-container--loading {
   position: relative;
   scroll-snap-align: center; /* Animación que lleva la tarjeta al centro */
   padding: 4px 4px;
@@ -136,6 +136,22 @@ html {
   justify-content: space-evenly;
 } */
 
+/* Skeleton */
+.movie-container--loading, .movie-detail-img_hero--loading {
+  background-color: var(--primary);
+  animation: loading-skeleton infinite 1.5s;
+}
+.movie-container--loading:nth-child(2), .category-container--loading:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.movie-container--loading:nth-child(3), .category-container--loading:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.category-container--loading {
+  background-color: var(--h6-color);
+  animation: loading-skeleton infinite 1.5s;
+}
+
 
 
 footer {
@@ -146,5 +162,16 @@ footer {
 @media only screen and (min-width: 768px) {
   #genres-container {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Animations */
+
+@keyframes loading-skeleton {
+  0%, 100% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
   }
 }
