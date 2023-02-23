@@ -12,6 +12,22 @@ const api = axios.create({
 })
 
 // utils
+
+const lazyLoader = new IntersectionObserver(handleIntersect);
+
+let target = document.querySelector(`.${container}`);
+observer.observe(target);
+
+function handleIntersect(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.intersectionRatio > prevRatio) {
+      entry.setAttribute.src = target.data-img
+    }
+  });
+
+  observer.unobserve(target);
+}
+
 const changeLocation = ((id, movieTitle) => {
   location.hash = `#movie=${id}-${movieTitle.trim()}`;
 });
@@ -25,7 +41,7 @@ function createMovies(movies, container) {
         <img
           class="movie-img"
           id="${movie.id}"
-          src="${basePosterURL}${movie.poster_path}"
+          data-img="${basePosterURL}${movie.poster_path}"
           alt="${movie.title}"/>
       </article>
     `
@@ -64,6 +80,7 @@ function createCategories(genres, container) {
     }
   });
 }
+
 
 // API Calls
 
