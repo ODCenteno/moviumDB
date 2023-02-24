@@ -13,20 +13,20 @@ const api = axios.create({
 
 // utils
 
-const lazyLoader = new IntersectionObserver(handleIntersect);
+// const lazyLoader = new IntersectionObserver(handleIntersect);
 
-let target = document.querySelector(`.${container}`);
-observer.observe(target);
+// let target = document.querySelector(`.${container}`);
+// observer.observe(target);
 
-function handleIntersect(entries, observer) {
-  entries.forEach(entry => {
-    if (entry.intersectionRatio > prevRatio) {
-      entry.setAttribute.src = target.data-img
-    }
-  });
+// function handleIntersect(entries, observer) {
+//   entries.forEach(entry => {
+//     if (entry.intersectionRatio > prevRatio) {
+//       entry.setAttribute.src = target.data-img
+//     }
+//   });
 
-  observer.unobserve(target);
-}
+//   observer.unobserve(target);
+// }
 
 const changeLocation = ((id, movieTitle) => {
   location.hash = `#movie=${id}-${movieTitle.trim()}`;
@@ -41,8 +41,12 @@ function createMovies(movies, container) {
         <img
           class="movie-img"
           id="${movie.id}"
-          data-img="${basePosterURL}${movie.poster_path}"
-          alt="${movie.title}"/>
+          src="${movie.poster_path !== null ? basePosterURL + movie.poster_path : `https://via.placeholder.com/300x450/5c218a/ffffff?text=${movie.title}`}"
+          alt="${movie.title}"
+          width="142px"
+          height="213px"
+          loading="lazy"
+          />
       </article>
     `
   });
